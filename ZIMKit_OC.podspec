@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/wukunzhengling/ZIMKit-IOS'
+  s.homepage         = 'https://github.com/wukunzhengling/zimkit_ios_oc'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'wukun' => 'wukun@zego.im' }
 #  s.source           = { :git => 'https://github.com/zegoim/ZIMKit-IOS.git', :tag => s.version.to_s }
-  s.source           = { :git => 'https://github.com/wukunzhengling/ZIMKit-IOS.git', :tag => "#{s.version}" }
+  s.source           = { :git => 'https://github.com/wukunzhengling/zimkit_ios_oc.git', :tag => "#{s.version}" }
 #  s.source           = { :git => '/Users/zego/Documents/IMKit/ZIMKit_Coco/ZIMKit-IOS/ZIMKit'}
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
