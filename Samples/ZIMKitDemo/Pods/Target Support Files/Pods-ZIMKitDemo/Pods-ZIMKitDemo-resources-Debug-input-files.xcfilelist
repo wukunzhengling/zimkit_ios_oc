@@ -1,0 +1,6 @@
+${PODS_ROOT}/Target Support Files/Pods-ZIMKitDemo/Pods-ZIMKitDemo-resources.sh
+${PODS_CONFIGURATION_BUILD_DIR}/ZIMKit_OC/ChatResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/ZIMKit_OC/CommonResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/ZIMKit_OC/ConversationResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/ZIMKit_OC/GroupResources.bundle
+${PODS_CONFIGURATION_BUILD_DIR}/ZIMKit_OC/GKPhotoBrowser.bundle

@@ -1,0 +1,51 @@
+{
+  "name": "ZIMKit_OC",
+  "version": "0.1.7.1",
+  "summary": "A short description of ZIMKit_OC.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/wukunzhengling/ZIMKit-IOS",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "wukun": "wukun@zego.im"
+  },
+  "source": {
+    "git": "https://github.com/wukunzhengling/ZIMKit-IOS.git",
+    "tag": "0.1.7.1"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "ZIMKit/**/*.{h,m}",
+  "user_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "pod_target_xcconfig": {
+    "EXCLUDED_ARCHS[sdk=iphonesimulator*]": "arm64"
+  },
+  "xcconfig": {
+    "VALID_ARCHS": "arm64 x86_64"
+  },
+  "ios": {
+    "resource_bundles": {
+      "ChatResources": [
+        "ZIMKit/Resources/ChatResources/*"
+      ],
+      "CommonResources": [
+        "ZIMKit/Resources/CommonResources/*"
+      ],
+      "ConversationResources": [
+        "ZIMKit/Resources/ConversationResources/*"
+      ],
+      "GroupResources": [
+        "ZIMKit/Resources/GroupResources/*"
+      ],
+      "GKPhotoBrowser": [
+        "ZIMKit/Resources/GKPhotoBrowser/*"
+      ]
+    },
+    "public_header_files": "ZIMKit/**/*.h"
+  }
+}
