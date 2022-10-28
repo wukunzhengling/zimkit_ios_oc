@@ -35,20 +35,20 @@ TODO: Add long description of the pod here.
 #  s.source_files = 'ZIMKit/**/*.{h,m}'
 
 s.subspec 'ZIMKitCommon' do |common|
-    common.source_files = 'ZIMKit/ZIMKitCommon/**/*.{h,m}'
+    common.source_files = '**/ZIMKitCommon/**/*.{h,m}'
 end
 
 s.subspec 'ZIMKitConversation' do |conversation|
-  conversation.source_files = 'ZIMKit/ZIMKitConversation/**/*.{h,m}'
+  conversation.source_files = '**/ZIMKitConversation/**/*.{h,m}'
 end
 
 s.subspec 'ZIMKitGroup' do |group|
-  group.source_files = 'ZIMKit/ZIMKitGroup/**/*.{h,m}'
+  group.source_files = '**/ZIMKitGroup/**/*.{h,m}'
 end
 
 s.subspec 'ZIMKitMessages' do |message|
-  message.source_files = 'ZIMKit/ZIMKitMessages/**/*.{h,m}'
-end
+  message.source_files = '**/ZIMKitMessages/**/*.{h,m}'
+#end
 
   # 是否是静态库 这个地方很重要 假如不写这句打出来的包 就是动态库 不能使用 一运行会报错 image not found
 #  s.static_framework = true
