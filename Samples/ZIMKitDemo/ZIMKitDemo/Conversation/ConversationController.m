@@ -16,11 +16,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = @"ZEGO IM";
-    
-    ZIMKitConversationListVC *conversationListVc = [[ZIMKitConversationListVC alloc] init];
-    [self addChildViewController:conversationListVc];
-    [self.view addSubview:conversationListVc.view];
-    
+
     //设置ZIMKit 代理
     ZIMKitManager.shared.delegate = self;
     //导航栏

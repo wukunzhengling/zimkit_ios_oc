@@ -6,10 +6,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ZIMKitConversationListVC.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ConversationController : UIViewController
+@interface ConversationController : ZIMKitConversationListVC
 
 @end
 
