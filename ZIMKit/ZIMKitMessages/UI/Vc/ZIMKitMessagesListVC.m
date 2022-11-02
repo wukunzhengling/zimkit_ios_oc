@@ -103,9 +103,9 @@
 
 - (void)setupViews {
     CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.height - ZIMKitChatToolBarHeight - Bottom_SafeHeight);
-    if (![UINavigationBar appearance].isTranslucent && [[[UIDevice currentDevice] systemVersion] doubleValue]<15.0) {
-        rect = CGRectMake(rect.origin.x, rect.origin.y , rect.size.width, self.view.height - ZIMKitChatToolBarHeight - Bottom_SafeHeight);
-    }
+//    if (![UINavigationBar appearance].isTranslucent && [[[UIDevice currentDevice] systemVersion] doubleValue]<15.0) {
+//        rect = CGRectMake(rect.origin.x, rect.origin.y , rect.size.width, self.view.height - ZIMKitChatToolBarHeight - Bottom_SafeHeight);
+//    }
     
     _messageTableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStylePlain];
     _messageTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -531,7 +531,8 @@
 
 - (void)scrollToBottomWithAnimated: (BOOL)animated {
     if(self.messageVM.messageList.count > 0){
-        NSInteger lastRowIndex = [self.messageTableView numberOfRowsInSection:0] - 1;
+//        NSInteger lastRowIndex = [self.messageTableView numberOfRowsInSection:0] - 1;
+        NSInteger lastRowIndex = self.messageVM.messageList.count - 1;
         if(lastRowIndex > 0){
             NSIndexPath*lastIndexPath = [NSIndexPath indexPathForRow: lastRowIndex inSection: 0];
             [self.messageTableView scrollToRowAtIndexPath:lastIndexPath atScrollPosition: UITableViewScrollPositionBottom animated:animated];

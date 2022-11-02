@@ -32,7 +32,7 @@
     self.title = self.groupName;
     self.view.backgroundColor = [UIColor dynamicColor:ZIMKitHexColor(0xF2F2F2) lightColor:ZIMKitHexColor(0xF2F2F2)];
     
-    CGRect rect = CGRectMake(8, 10, self.view.width - 8*2, 48);
+    CGRect rect = CGRectMake(8, 10+GetNavAndStatusHight, self.view.width - 8*2, 48);
 
     ZIMKitGroupdetailView *groupdetailView = [[ZIMKitGroupdetailView alloc] initWithFrame:rect groupID:self.groupID];
     groupdetailView.layer.cornerRadius = 8;

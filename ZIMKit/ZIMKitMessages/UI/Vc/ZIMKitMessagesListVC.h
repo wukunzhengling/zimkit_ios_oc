@@ -34,12 +34,13 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign, readonly) ZIMConversationType      conversationType;
 @property (nonatomic, strong, readonly) ZIMKitMessagesVM         *messageVM;
 
-
-/// create messaeListVC
+/// Create the session page
 ///
-/// @param conversationID conversationID
-/// @param conversationType conversationType
-/// @param conversationName conversationName
+/// Description: Create a session page VC first, then you can create a session page by pushing or presenting the VC.
+///
+/// @param conversationID : session ID.
+/// @param conversationType : session type.
+/// @param conversationName : session name.
 - (instancetype)initWithConversationID:(NSString *)conversationID
                       conversationType:(ZIMConversationType)conversationType
                       conversationName:(nullable NSString *)conversationName;

@@ -182,7 +182,7 @@
 }
 
 - (void)layout {
-    CGFloat topMargin = 0;
+    CGFloat topMargin = GetNavAndStatusHight;
     if (self.createType == ZIMKitCreateChatTypeSingle) {
         [self.userIDFiled mas_remakeConstraints:^(MASConstraintMaker *make) {
             make.top.mas_equalTo(self.view.mas_top).offset(64.0+topMargin);

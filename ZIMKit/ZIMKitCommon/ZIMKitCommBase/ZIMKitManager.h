@@ -11,14 +11,16 @@
 
 @protocol ZIMKitManagerDelegate <NSObject>
 
-/// ZIM状态回调
+/// Callback for updates on the connection status changes.
+/// The event callback when the connection state changes.
 ///
-/// @param state 连接状态
+/// @param state : the current connection status.
+/// @param event : the event happened. The event that causes the connection status to change.
 - (void)onConnectionStateChange:(ZIMConnectionState)state event:(ZIMConnectionEvent)event;
 
-/// 未读消息总数
+/// Total number of unread messages.
 ///
-/// @param totalCount 未读数量
+/// @param totalCount : Total number of unread messages.
 - (void)onTotalUnreadMessageCountChange:(NSInteger)totalCount;
 
 @end
@@ -31,39 +33,45 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) ZIMKitUserInfo *userInfo;
 
+/// Delegate the ZIMKitManager
 @property (nonatomic, weak) id<ZIMKitManagerDelegate>delegate;
 
-/// 创建ZIMKitManager实例
+/// Create a ZIMKitManager instance.
 + (instancetype)shared;
 
-/// 创建ZIM实例
+/// Initialize the ZIMKit.
 ///
-/// @param appID  应用ID,请联系ZEGO技术支持
-/// @param appSign appSign,请联系ZEGO技术支持
+/// Description: You will need to initialize the ZIMKit SDK before calling methods.
+///
+/// @param appID : appID. To get this, go to ZEGOCLOUD Admin Console (https://console.zegocloud.com/).
+/// @param appSign : appSign. To get this, go to ZEGOCLOUD Admin Console (https://console.zegocloud.com/).
 - (void)initWith:(int)appID appSign:(NSString *)appSign;
 
-/// 登录ZIM
+/// Connects user to ZIMKit server
 ///
-/// @param userInfo 用户信息
-/// @param callback 返回结果回调
+/// Description: Connects user to ZIMKit server. This method can only be used after calling the [initWith:] method and before you calling any other methods.
+///
+/// @param userInfo : user info
+/// @param callback : callback for the results that whether the connection is successful.
 - (void)connectUser:(ZIMKitUserInfo *)userInfo
      callback:(ZIMLoggedInCallback)callback;
 
-/// 退出ZIM
+/// Disconnects current user from ZIMKit server.
 - (void)disconnectUser;
 
-/// 查询个人信息
+/// Update the user avatar
 ///
-/// @param userIDs 用户ID集合
-/// @param callback 返回结果回调
-- (void)queryUsersInfo:(NSArray<NSString *>*)userIDs callback:(ZIMUsersInfoQueriedCallback)callback;
-
-
-/// 更新用户头像
+/// Description: After a successful connection, you can change the user avatar as needed.
 ///
-/// @param avatarUrl 头像URL
-/// @param callback 返回结果回调
+/// @param avatarUrl : avatar URL.
+/// @param callback : callback for the results that whether the user avatar is updated successfully.
 - (void)updateUserAvatarUrl:(NSString *)avatarUrl callback:(ZIMUserAvatarUrlUpdatedCallback)callback;
+
+/// Query users info
+///
+/// @param userIDs userIDs
+/// @param callback  callback
+- (void)queryUsersInfo:(NSArray<NSString *>*)userIDs callback:(ZIMUsersInfoQueriedCallback)callback;
 
 - (NSString *)getImagepath;
 

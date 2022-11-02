@@ -13,7 +13,7 @@ typedef void(^ZIMKitConversationBlock) (ZIMError * _Nullable errorInfo);
 
 @protocol ZIMKitConversationVMDelegate <NSObject>
 
-/// 会话更新
+/// Session update
 - (void)onConversationListChange:(NSArray<ZIMKitConversationModel *> *_Nullable)conversationList;
 @end
 
@@ -35,8 +35,13 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)removeData:(ZIMKitConversationModel *)data
      completeBlock:(ZIMKitConversationBlock)completeBlock;
 
-/// Clear  unread count
-- (void)clearConversationUnreadMessageCount:(NSString *)coversationID
+
+/// Clear session unread count
+///
+/// @param conversationID : session ID.
+/// @param conversationType : session type.
+/// @param completeBlock : callback
+- (void)clearConversationUnreadMessageCount:(NSString *)conversationID
                            conversationType:(ZIMConversationType)conversationType
                               completeBlock:(ZIMKitConversationBlock)completeBlock;
 

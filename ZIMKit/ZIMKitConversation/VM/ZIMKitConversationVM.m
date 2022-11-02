@@ -116,10 +116,10 @@
     }];
 }
 
-- (void)clearConversationUnreadMessageCount:(NSString *)coversationID
+- (void)clearConversationUnreadMessageCount:(NSString *)conversationID
                            conversationType:(ZIMConversationType)conversationType
                               completeBlock:(ZIMKitConversationBlock)completeBlock {
-    [ZIMKitManagerZIM clearConversationUnreadMessageCount:coversationID conversationType:conversationType callback:^(NSString * _Nonnull conversationID, ZIMConversationType conversationType, ZIMError * _Nonnull errorInfo) {
+    [ZIMKitManagerZIM clearConversationUnreadMessageCount:conversationID conversationType:conversationType callback:^(NSString * _Nonnull conversationID, ZIMConversationType conversationType, ZIMError * _Nonnull errorInfo) {
         if (completeBlock) {
             completeBlock(errorInfo);
         }

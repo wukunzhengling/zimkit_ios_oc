@@ -49,7 +49,6 @@
 - (void)setupViews {
     self.view.backgroundColor = [UIColor dynamicColor:ZIMKitHexColor(0xFFFFFF) lightColor:ZIMKitHexColor(0xFFFFFF)];
     CGRect rect = self.view.bounds;
-    rect = CGRectMake(rect.origin.x, rect.origin.y, rect.size.width, rect.size.height - StatusBar_Height - NavBar_Height );
     _tableView = [[UITableView alloc] initWithFrame:rect];
     _tableView.tableFooterView = [[UIView alloc] init];
     _tableView.backgroundColor = self.view.backgroundColor;

@@ -41,14 +41,11 @@
         self.navigationBar.standardAppearance = appearance;
         
         self.navigationBar.scrollEdgeAppearance = appearance;
-        [[UINavigationBar appearance] setTranslucent:NO];
     }
     else {
         self.navigationBar.backgroundColor = self.tintColor;
         self.navigationBar.barTintColor = self.tintColor;
         self.navigationBar.barStyle = UIBarStyleDefault;
-        
-        [[UINavigationBar appearance] setTranslucent:NO];
     }
     
     UIView *view = [[UIView alloc] init];
@@ -56,7 +53,6 @@
     [self.navigationBar addSubview:view];
     view.frame = CGRectMake(0, self.navigationBar.bounds.size.height -1, self.navigationBar.bounds.size.width, 1);
 
-    
     self.interactivePopGestureRecognizer.delegate = (id)self;
 }
 
