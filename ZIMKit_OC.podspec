@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZIMKit_OC'
-  s.version          = '0.1.7.4'
+  s.version          = '0.1.7.6'
   s.summary          = 'A short description of ZIMKit_OC.'
 
 # This description is used to generate tags and improve search results.
@@ -40,9 +40,9 @@ TODO: Add long description of the pod here.
   
 #  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', 'GCC_PREPROCESSOR_DEFINITIONS[config=Debug]' => '$(inherited) _ZX_ENVIRONMENT_DEBUG_=1001', 'GCC_PREPROCESSOR_DEFINITIONS' =>
 #  'GPB_USE_PROTOBUF_FRAMEWORK_IMPORTS=1' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }  #必须
+#  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }  #必须
 #
-  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+#  s.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     
 #  s.prefix_header_file = 'ZIMKit/Classes/ZIMKitCommon/ZIMKitCommBase/ZIMKitPrefix.pch'
 

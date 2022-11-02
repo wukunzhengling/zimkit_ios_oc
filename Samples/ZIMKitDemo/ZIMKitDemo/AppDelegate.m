@@ -7,12 +7,15 @@
 
 #import "AppDelegate.h"
 #import "LoginViewController.h"
-#import <Bugly/Bugly.h>
 #import "ZegoTabBarController.h"
 #import "KeyCenter.h"
 #import "HelpCenter.h"
 #import "ConversationController.h"
 #import <UserNotifications/UserNotifications.h>
+
+#if !DEBUG
+#import <Bugly/Bugly.h>
+#endif
 
 @interface AppDelegate ()<UNUserNotificationCenterDelegate>
 
@@ -38,10 +41,12 @@
 }
 
 - (void)configBugly {
+#if !DEBUG
     BuglyConfig *config = [BuglyConfig new];
     config.blockMonitorEnable = YES;
     [Bugly setUserValue:ZIM.getVersion forKey:@"ZIM_Version"];
     [Bugly startWithAppId:@"81823fe9a0" config:config];
+#endif
 }
 
 - (void)loginSuccess {

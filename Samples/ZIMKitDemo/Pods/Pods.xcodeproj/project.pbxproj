@@ -21,7 +21,6 @@
 /* Begin PBXBuildFile section */
 		00A06CC86F4A061801ED5A07EB4ECD38 /* chat_message_voice_left_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2A764782EE1A77F04DEFD2EC3126F744 /* chat_message_voice_left_1@2x.png */; };
 		011E71A37EB2FECF379BB62295F6B273 /* chat_face_delIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = F5643CC5D9FEF41AF8746378F6D8F7E6 /* chat_face_delIcon.png */; };
-		0134BA653A3B746F5FAAD61E06AC7711 /* Pods-ZIMKitDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A00624AFAEBF17B19B2EFB7254FABB25 /* Pods-ZIMKitDemo-dummy.m */; };
 		019AB756DB1A7BF2F1363AB932F4E464 /* chat_message_menuitem_arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 354B23A9597CE1C74C175F75C19A56A0 /* chat_message_menuitem_arrow_down@3x.png */; };
 		01C18F96446DDB12CBA1B60545E43D46 /* ZIMKitRouter.h in Headers */ = {isa = PBXBuildFile; fileRef = A33829DB66B848FB49656605033D811E /* ZIMKitRouter.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		02AC6DEEA89309736E4132F98A2D4414 /* send_bubble_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 8512E80E0599EDB4EA148DB615FB0265 /* send_bubble_2.png */; };
@@ -39,6 +38,7 @@
 		0BE80F79E7E457D429CD47B49012AF5B /* chat_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 146FA5774F4CEB110A94118ED00C9CF8 /* chat_loading@2x.png */; };
 		0C122321399CFA5A95BBE60D96B0E3E4 /* chat_message_send_fail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FBE89A004556C50244F0FE8FD6D33B18 /* chat_message_send_fail@2x.png */; };
 		0CD9DFEA5D451D819B19DB0551D0CEE6 /* angle-mask.png in Resources */ = {isa = PBXBuildFile; fileRef = E4F34BFE0E2C8BF76A71AA813E9CFDC0 /* angle-mask.png */; };
+		0DDBE156C76ED4D470B737FFA62A3610 /* Pods-ZIMKitDemo-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A00624AFAEBF17B19B2EFB7254FABB25 /* Pods-ZIMKitDemo-dummy.m */; };
 		0E9027FA96B8D37B7BAAC80DC941D4EC /* send_bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D53A3DE5AC376E47E22AD0FF1E739761 /* send_bubble@2x.png */; };
 		0F5EADBA32B149605B2CFE6BE2CB8925 /* GKWebImageProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = DDA05E231638D74186D87116C16C61D2 /* GKWebImageProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		10C4A5ECAEEA5BC2FFEB8E0561BC23D5 /* ZIMKitMessageCellConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 66A3C741F2987CF97651EFF43C2E75BC /* ZIMKitMessageCellConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -141,6 +141,7 @@
 		50AEFA726DEDF794FC2FCFC977159593 /* NSBundle+ZIMKitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = DCEA16763947A6B5479B0792592801CA /* NSBundle+ZIMKitUtil.m */; };
 		516E268F9D44F7B159A3FCEF6853D45F /* conversation_bar_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 1E6F7861F70CD16B64BA5BEB5CE13A85 /* conversation_bar_right.png */; };
 		52CCF2351FB630BE625242EFDDBFB481 /* chat_message_voice_left_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A0ACA521346B141D2873AA382A84F453 /* chat_message_voice_left_3.png */; };
+		5381D385552913E105FE5920F3B4A8B7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		550F88FC49DB054A72A064298DB19E02 /* ZIMKitRefreshAutoHeader.h in Headers */ = {isa = PBXBuildFile; fileRef = 30F5824C7DC723469DF114A30B6032AF /* ZIMKitRefreshAutoHeader.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		55890DB5A4D7DCC9891EB2F312D1BCE3 /* group_bar_close.png in Resources */ = {isa = PBXBuildFile; fileRef = DE2B961D0324DE8516F776FC136D6ECD /* group_bar_close.png */; };
 		564F8B1ECB22652946EC8C9E1D35D390 /* chat_message_record_red.gif in Resources */ = {isa = PBXBuildFile; fileRef = D3A03EA07115D73270D319B1EA9F4A09 /* chat_message_record_red.gif */; };
@@ -327,10 +328,10 @@
 		D31DE6216513321D7B8FC4E94D4EF212 /* receve_bubble_clicked@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8C1D6E24D15CEE9094272C295C79C00F /* receve_bubble_clicked@3x.png */; };
 		D475E38F9C74DAD0AEF0B8AE3EB2A07E /* chat_message_voice_left_3@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 880742BBEAB0C92EEA52553E73EF0671 /* chat_message_voice_left_3@3x.png */; };
 		D6B2D484A58D78B56EC7DBE43051D0EC /* ZIMKitChatBarMoreView.m in Sources */ = {isa = PBXBuildFile; fileRef = DF1A9D534E7F08BF1BDEEB8AC18E1017 /* ZIMKitChatBarMoreView.m */; };
+		D75DE5D986BD240C184876EDD7A7442F /* Pods-ZIMKitDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBB51D8B5BAF7E410FC75B2B27DCE0C5 /* Pods-ZIMKitDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D95C3E66F79308102909BD97717D7FB9 /* chat_message_file_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 6C11D269EBDECDC45DC597CAC9394BE2 /* chat_message_file_image.png */; };
 		DA73E462506F5E977E185F47093F2E66 /* ZIMKitMessageModule.h in Headers */ = {isa = PBXBuildFile; fileRef = 0D876F52D8CC24F379F33C7667049CAE /* ZIMKitMessageModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DAE932FE701E1D86BDBF9BC9FB56E0FB /* ZIMKitFaceManagerView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFCBA51F5180BB3ECBB1CD5B0D6683C0 /* ZIMKitFaceManagerView.m */; };
-		DAEEA2B65F6677991A5BF5815A72A518 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		DD4287010B9B60378F4B7153B50ECCF2 /* angle-mask@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 67E2D7D966F78205566B8CF9A4584B73 /* angle-mask@3x.png */; };
 		DDD801B95A7C20440F4D594BCB50289C /* chat_message_menuitem_speakerplay.png in Resources */ = {isa = PBXBuildFile; fileRef = 78741BDD05FB720EF088A10778D940D8 /* chat_message_menuitem_speakerplay.png */; };
 		DE83C897B66DF944B20DF485670E9BB9 /* chat_message_selected.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A82DD6BCBFB6A21D48DF7BA854F5F79 /* chat_message_selected.png */; };
@@ -349,7 +350,6 @@
 		E851434E2661BF5932F49830B4471C57 /* ZIMKitGroupdetailView.h in Headers */ = {isa = PBXBuildFile; fileRef = 2897D9AE54D10DD55AC15A570228EA73 /* ZIMKitGroupdetailView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E8525B80D28F9C6ACB066EA522D1DD73 /* ZIMKitInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 290171512E9330B21770C3ADF192FEBD /* ZIMKitInputTextView.m */; };
 		E910BCF5531E1E5E0E60043DFBF2E7DA /* ZIMKitChatTostView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19DEC6DC34A9EA666E240BA1457B982A /* ZIMKitChatTostView.m */; };
-		E93A54666575C9EDB323C343A6134462 /* Pods-ZIMKitDemo-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EBB51D8B5BAF7E410FC75B2B27DCE0C5 /* Pods-ZIMKitDemo-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E95302E7C43EAFE4B47404FE3D42D61C /* chat_message_voice_right_1@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 443FD1AC7FDC546475BEF34C9F552045 /* chat_message_voice_right_1@3x.png */; };
 		E96272A6A1E8EA52B62406ADD68F8AD3 /* ZIMKitBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBA65AA5999C22862EE6A95F94E295B7 /* ZIMKitBaseViewController.m */; };
 		EA8233D4B17E10878BDEBBA61F21FA8F /* receve_bubble_2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 53AE47739B442C6EC57E1ED501163615 /* receve_bubble_2@3x.png */; };
@@ -396,13 +396,6 @@
 			remoteGlobalIDString = 12659A49539FBAD9427687F71211EAF2;
 			remoteInfo = "ZIMKit_OC-CommonResources";
 		};
-		493BEA91CA5C6B8DC074F985E4EB942D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BFB791457028DCA107A5CFCDA25BDAD9;
-			remoteInfo = ZIMKit_OC;
-		};
 		53F687522336E556290CA3CBA78C527F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
@@ -410,19 +403,26 @@
 			remoteGlobalIDString = EA155FA97D0C7BE14FCE890A6E1B6DB9;
 			remoteInfo = "ZIMKit_OC-GKPhotoBrowser";
 		};
-		9C6F722C06D28D6A903A8EE0EE036EF0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 4A68CFD979D413A619DF631BB121D98F;
-			remoteInfo = Bugly;
-		};
 		9EDEEAFF3C1B4ACBD169CEE2A3E68835 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 57A3DA1C258672560097F1E10841721F;
 			remoteInfo = "ZIMKit_OC-GroupResources";
+		};
+		A3C13579C72460B918A3059BF9B92438 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A68CFD979D413A619DF631BB121D98F;
+			remoteInfo = Bugly;
+		};
+		E2FDFF3D3843BCB1BF079C277579639F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFB791457028DCA107A5CFCDA25BDAD9;
+			remoteInfo = ZIMKit_OC;
 		};
 		E36B2C440E6255062BB3074A9DEB170E /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -842,14 +842,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		59E0A68338CA4626507412DC9CB64BD6 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DAEEA2B65F6677991A5BF5815A72A518 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CC02BDD768EA04AE1612E74B4181AA40 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -862,6 +854,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EBA8D718711C065FE2B4FD0F5A2F383A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5381D385552913E105FE5920F3B4A8B7 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1840,11 +1840,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C5D38DC989A78F97102D236604E2A984 /* Headers */ = {
+		5CF84248A9AB446E606FFADFBAB3483C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93A54666575C9EDB323C343A6134462 /* Pods-ZIMKitDemo-umbrella.h in Headers */,
+				D75DE5D986BD240C184876EDD7A7442F /* Pods-ZIMKitDemo-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1887,18 +1887,18 @@
 		};
 		4998DDA595EA6ED6393DDAB01EB01889 /* Pods-ZIMKitDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9404ECDA41A4C330A791FDF130D1488 /* Build configuration list for PBXNativeTarget "Pods-ZIMKitDemo" */;
+			buildConfigurationList = 03668110B34A1A690BB75F3797F5151D /* Build configuration list for PBXNativeTarget "Pods-ZIMKitDemo" */;
 			buildPhases = (
-				C5D38DC989A78F97102D236604E2A984 /* Headers */,
-				BB0A8051C62A69B9DE26427D6E729667 /* Sources */,
-				59E0A68338CA4626507412DC9CB64BD6 /* Frameworks */,
-				E6125D256940B0A45583715F759A4CC3 /* Resources */,
+				5CF84248A9AB446E606FFADFBAB3483C /* Headers */,
+				58CB491D9068FDB674B5FED140BB965B /* Sources */,
+				EBA8D718711C065FE2B4FD0F5A2F383A /* Frameworks */,
+				E9D75D472EC0EE5A5B1BF539210D00EB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				073BEF19EF79689BB0889F8D3409DC72 /* PBXTargetDependency */,
-				F874B5509B78EE0F42AEDAF8EBB6EBD3 /* PBXTargetDependency */,
+				063C64A381B215656E302BD9F16C1F05 /* PBXTargetDependency */,
+				7D0808099AA7228A3D708E20118BD415 /* PBXTargetDependency */,
 			);
 			name = "Pods-ZIMKitDemo";
 			productName = Pods_ZIMKitDemo;
@@ -2205,7 +2205,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E6125D256940B0A45583715F759A4CC3 /* Resources */ = {
+		E9D75D472EC0EE5A5B1BF539210D00EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -2266,6 +2266,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		58CB491D9068FDB674B5FED140BB965B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DDBE156C76ED4D470B737FFA62A3610 /* Pods-ZIMKitDemo-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8FC9B33E88BC916F12C4C655C20CC7C4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -2277,14 +2285,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BB0A8051C62A69B9DE26427D6E729667 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0134BA653A3B746F5FAAD61E06AC7711 /* Pods-ZIMKitDemo-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2389,11 +2389,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		073BEF19EF79689BB0889F8D3409DC72 /* PBXTargetDependency */ = {
+		063C64A381B215656E302BD9F16C1F05 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Bugly;
 			target = 4A68CFD979D413A619DF631BB121D98F /* Bugly */;
-			targetProxy = 9C6F722C06D28D6A903A8EE0EE036EF0 /* PBXContainerItemProxy */;
+			targetProxy = A3C13579C72460B918A3059BF9B92438 /* PBXContainerItemProxy */;
 		};
 		3B3750D185B034931C772F0BADDE972A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -2419,17 +2419,17 @@
 			target = FE5207A862274EE1C4441152D58A3820 /* ZIMKit_OC-ConversationResources */;
 			targetProxy = E36B2C440E6255062BB3074A9DEB170E /* PBXContainerItemProxy */;
 		};
+		7D0808099AA7228A3D708E20118BD415 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ZIMKit_OC;
+			target = BFB791457028DCA107A5CFCDA25BDAD9 /* ZIMKit_OC */;
+			targetProxy = E2FDFF3D3843BCB1BF079C277579639F /* PBXContainerItemProxy */;
+		};
 		E84DAE74A4DEBCED5D17A8439881EF3C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = "ZIMKit_OC-CommonResources";
 			target = 12659A49539FBAD9427687F71211EAF2 /* ZIMKit_OC-CommonResources */;
 			targetProxy = 3062DE3EFBA88FC0C31E29D720216843 /* PBXContainerItemProxy */;
-		};
-		F874B5509B78EE0F42AEDAF8EBB6EBD3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ZIMKit_OC;
-			target = BFB791457028DCA107A5CFCDA25BDAD9 /* ZIMKit_OC */;
-			targetProxy = 493BEA91CA5C6B8DC074F985E4EB942D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -2438,6 +2438,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34ADF8AB977B0CA5766DCA66B8B17CAC /* ZIMKit_OC.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2467,48 +2468,11 @@
 			};
 			name = Debug;
 		};
-		08A9580DD77FDF5ACAC0EC3A7B6C969D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 914004904E9121FDCB2E0B8613BC5CD4 /* Pods-ZIMKitDemo.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ZIMKitDemo/Pods-ZIMKitDemo-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ZIMKitDemo/Pods-ZIMKitDemo.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		11D5C24AAF66254A1E2FAC91B3F9AB52 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34ADF8AB977B0CA5766DCA66B8B17CAC /* ZIMKit_OC.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-ChatResources-ZIMKit_OC-Info.plist";
@@ -2525,6 +2489,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34ADF8AB977B0CA5766DCA66B8B17CAC /* ZIMKit_OC.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-CommonResources-ZIMKit_OC-Info.plist";
@@ -2541,6 +2506,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24C1C241E101D921A3AF550838B74F93 /* ZIMKit_OC.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-ConversationResources-ZIMKit_OC-Info.plist";
@@ -2557,6 +2523,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24C1C241E101D921A3AF550838B74F93 /* ZIMKit_OC.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-GroupResources-ZIMKit_OC-Info.plist";
@@ -2573,6 +2540,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34ADF8AB977B0CA5766DCA66B8B17CAC /* ZIMKit_OC.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-GKPhotoBrowser-ZIMKit_OC-Info.plist";
@@ -2589,6 +2557,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24C1C241E101D921A3AF550838B74F93 /* ZIMKit_OC.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2619,28 +2588,13 @@
 			};
 			name = Release;
 		};
-		63D7D8F4E94EDA8719711F152DEBF98D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 34ADF8AB977B0CA5766DCA66B8B17CAC /* ZIMKit_OC.debug.xcconfig */;
-			buildSettings = {
-				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
-				IBSC_MODULE = ZIMKit_OC;
-				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-GroupResources-ZIMKit_OC-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				PRODUCT_NAME = GroupResources;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				WRAPPER_EXTENSION = bundle;
-			};
-			name = Debug;
-		};
-		710710DC8CFDB7A30689A8A185048590 /* Debug */ = {
+		59138799BC83E56B3EE9C51C8E948F74 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D8497E275E37510EB3DA97BB529567F7 /* Pods-ZIMKitDemo.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -2672,10 +2626,28 @@
 			};
 			name = Debug;
 		};
+		63D7D8F4E94EDA8719711F152DEBF98D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34ADF8AB977B0CA5766DCA66B8B17CAC /* ZIMKit_OC.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
+				IBSC_MODULE = ZIMKit_OC;
+				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-GroupResources-ZIMKit_OC-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				PRODUCT_NAME = GroupResources;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
 		71AE66E2E87F2065C446002A12006740 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24C1C241E101D921A3AF550838B74F93 /* ZIMKit_OC.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-CommonResources-ZIMKit_OC-Info.plist";
@@ -2756,6 +2728,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2770,6 +2743,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24C1C241E101D921A3AF550838B74F93 /* ZIMKit_OC.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-GKPhotoBrowser-ZIMKit_OC-Info.plist";
@@ -2788,6 +2762,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2869,6 +2844,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 24C1C241E101D921A3AF550838B74F93 /* ZIMKit_OC.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-ChatResources-ZIMKit_OC-Info.plist";
@@ -2885,6 +2861,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 34ADF8AB977B0CA5766DCA66B8B17CAC /* ZIMKit_OC.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
 				CONFIGURATION_BUILD_DIR = "$(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/ZIMKit_OC";
 				IBSC_MODULE = ZIMKit_OC;
 				INFOPLIST_FILE = "Target Support Files/ZIMKit_OC/ResourceBundle-ConversationResources-ZIMKit_OC-Info.plist";
@@ -2897,9 +2874,57 @@
 			};
 			name = Debug;
 		};
+		F29EF784F063080DD702FB27DB0F02D6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 914004904E9121FDCB2E0B8613BC5CD4 /* Pods-ZIMKitDemo.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ZIMKitDemo/Pods-ZIMKitDemo-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ZIMKitDemo/Pods-ZIMKitDemo.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		03668110B34A1A690BB75F3797F5151D /* Build configuration list for PBXNativeTarget "Pods-ZIMKitDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59138799BC83E56B3EE9C51C8E948F74 /* Debug */,
+				F29EF784F063080DD702FB27DB0F02D6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4684E0505B9DF5C455BBC0BC07FB989B /* Build configuration list for PBXNativeTarget "ZIMKit_OC-ConversationResources" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -2950,15 +2975,6 @@
 			buildConfigurations = (
 				8321406B955E7EDAFA0EA0EA992A8E67 /* Debug */,
 				A4EEB7570613B5558AF18867CEB3A8B1 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C9404ECDA41A4C330A791FDF130D1488 /* Build configuration list for PBXNativeTarget "Pods-ZIMKitDemo" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				710710DC8CFDB7A30689A8A185048590 /* Debug */,
-				08A9580DD77FDF5ACAC0EC3A7B6C969D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
