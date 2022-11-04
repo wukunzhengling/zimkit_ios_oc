@@ -13,8 +13,8 @@ The following describes how to run the sample code of the In-app Chat UIKit.
   2. Subscribe to the **In-app Chat** service (Contact technical support if the subscript doesn’t go well).
 
 * Platform-specific requirements:
-  * Xcode 13.0 or later.
-  * A real iOS device that is running on iOS 12.0 or later.
+  * Xcode 10.0 or later.
+  * A real iOS device that is running on iOS 9.0 or later.
   * The device is connected to the internet.
 
 
