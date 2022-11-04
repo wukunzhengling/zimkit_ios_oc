@@ -10,11 +10,11 @@
 @implementation KeyCenter
 
 + (unsigned int)appID {
-    return 0; //Contact ZEGO commercial personnel
+    return 0; //Contact ZEGOCLOUD team
 }
 
 + (NSString *)appSign {
-    return @""; //Contact ZEGO commercial personnel
+    return @""; //Contact ZEGOCLOUD team
 }
 
 

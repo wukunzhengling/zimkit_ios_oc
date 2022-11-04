@@ -47,9 +47,10 @@ TODO: Add long description of the pod here.
 #  s.prefix_header_file = 'ZIMKit/Classes/ZIMKitCommon/ZIMKitCommBase/ZIMKitPrefix.pch'
 
 # 必须要加,ZIM 不支持i386
-  s.xcconfig = {
-  'VALID_ARCHS' =>  'arm64 x86_64',
-  }
+#  s.xcconfig = {
+#  'VALID_ARCHS' =>  'arm64 x86_64',
+#  }
+  s.cocoapods_version       = '>= 1.10.0'
   
   s.ios.resource_bundles = {
     'ChatResources' => ['ZIMKit/Resources/ChatResources/*'],
