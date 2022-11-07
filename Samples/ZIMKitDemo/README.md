@@ -81,8 +81,8 @@ Congratulations! So far, you have finished all the steps, and this is what you g
 
 ## More to explore
 
-* To get started swiftly, follow the steps in this doc: [Integrate the SDK](https://docs.zegocloud.com/article/14860)
-* To explore more customizable components, check this out: [Component overview](https://docs.zegocloud.com/article/14861)
+* To get started swiftly, follow the steps in this doc: [Integrate the SDK](https://docs.zegocloud.com/article/14663)
+* To explore more customizable components, check this out: [Component overview](https://docs.zegocloud.com/article/14666)
 
 
 
