@@ -1,5 +1,5 @@
 //
-//  ZIMKitAlertView.h
+//  AlertView.h
 //  ZIMKit
 //
 //  Created by zego on 2022/7/5.
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ZIMKitAlertView : UIView
+@interface AlertView : UIView
 
 @property (nonatomic, copy) void(^actionBlock)(NSInteger index);
 

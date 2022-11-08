@@ -14,10 +14,10 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface HelpCenter : NSObject
 
-// 获取用户名
+// get username
 + (NSString *)getUserNameWith:(NSString *)userID;
 
-// 获取用户头像
+// get userAvatar
 + (NSString *)getUserAvatar:(NSString *)userID;
 
 + (UIViewController *)currentViewController;

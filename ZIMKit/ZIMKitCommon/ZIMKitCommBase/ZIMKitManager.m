@@ -48,7 +48,7 @@
 }
 
 - (void)connectUser:(ZIMKitUserInfo *)userInfo
-     callback:(ZIMLoggedInCallback)callback {
+     callback:(ZIMKitConnectUserCallBlock)callback {
     self.userInfo = userInfo;
     
     ZIMUserInfo *zimInfo = [[ZIMUserInfo alloc] init];
@@ -107,6 +107,32 @@
 
 - (void)disconnectUser {
     [self.zim logout];
+}
+
+- (void)createGroup:(NSString *)groupName
+         userIDList:(NSArray <NSString *>*)userIDList
+           callBack:(ZIMKitCreateGroupCallback)callBack {
+    ZIMGroupInfo *info = [[ZIMGroupInfo alloc] init];
+    info.groupName = groupName;
+    
+    [ZIMKitManagerZIM createGroup:info userIDs:userIDList callback:^(ZIMGroupFullInfo * _Nonnull groupInfo, NSArray<ZIMGroupMemberInfo *> * _Nonnull userList, NSArray<ZIMErrorUserInfo *> * _Nonnull errorUserList, ZIMError * _Nonnull errorInfo) {
+        if (callBack) {
+            ZIMKitGroupInfo *info = [[ZIMKitGroupInfo alloc] init];
+            [info fromZIMGroupFullInfo:groupInfo];
+            callBack(info, errorUserList, errorInfo);
+        }
+    }];
+}
+
+- (void)joinGroup:(NSString *)groupID
+         callBack:(ZIMKitJoinGroupCallback)callBack {
+    [ZIMKitManagerZIM joinGroup:groupID callback:^(ZIMGroupFullInfo * _Nonnull groupInfo, ZIMError * _Nonnull errorInfo) {
+        if (callBack) {
+            ZIMKitGroupInfo *info = [[ZIMKitGroupInfo alloc] init];
+            [info fromZIMGroupFullInfo:groupInfo];
+            callBack(info, errorInfo);
+        }
+    }];
 }
 
 - (void)createCachePath

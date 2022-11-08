@@ -1,18 +1,17 @@
 //
-//  ZIMKitCreateChatController.m
+//  CreateChatController.m
 //  ZIMKit
 //
 //  Created by zego on 2022/5/23.
 //
 
-#import "ZIMKitCreateChatController.h"
-#import "ZIMKitGroupVM.h"
+#import "CreateChatController.h"
 #import "ZIMKitGroupInfo.h"
 #import "ZIMKitDefine.h"
 #import <Masonry/Masonry.h>
 #import <Objc/runtime.h>
 
-@interface ZIMKitCreateChatController ()<UITextFieldDelegate>
+@interface CreateChatController ()<UITextFieldDelegate>
 
 /// input  userID/groupID
 @property (nonatomic, strong) UITextField *userIDFiled;
@@ -26,14 +25,9 @@
 /// create button
 @property (nonatomic, strong) UIButton *createBtn;
 
-/// viewmodel
-@property (nonatomic, strong) ZIMKitGroupVM *groupVm;
-
-@property (nonatomic, copy) void(^createChatActionBlock)(NSString *conversationID, ZIMConversationType type, NSString *conversationName );
-
 @end
 
-@implementation ZIMKitCreateChatController
+@implementation CreateChatController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -43,19 +37,11 @@
     [self setupViews];
 }
 
-
-- (ZIMKitGroupVM *)groupVm {
-    if (!_groupVm) {
-        _groupVm = [[ZIMKitGroupVM alloc] init];
-    }
-    return _groupVm;
-}
-
 /// Start a chat
 - (void)createChatAction {
     if (self.createType == ZIMKitCreateChatTypeSingle) {
 
-        NSDictionary *param = @{@"conversationID" : self.userIDFiled.text, @"conversationType" : @(ZIMConversationTypePeer), @"conversationName" : self.userIDFiled.text ?:@""};
+        NSDictionary *param = @{@"conversationID" : self.userIDFiled.text, @"conversationType" : @(ZIMConversationTypePeer), @"conversationName" : @""};
         self.router.openUrlWithParam(router_chatListUrl, param);
         [self removeSelfVCFromNav];
     } else if (self.createType == ZIMKitCreateChatTypeGroup) {
@@ -64,7 +50,7 @@
         NSArray *userIDList = [self.chatNameFiled.text componentsSeparatedByString:@";"];
         
         @weakify(self);
-        [self.groupVm createGroup:nil groupName:groupName userIDList:userIDList callBack:^(ZIMKitGroupInfo * _Nullable groupInfo, NSArray<ZIMErrorUserInfo *> * _Nullable errorUserList, ZIMError * _Nullable errorInfo) {
+        [ZIMKitManager.shared createGroup:groupName userIDList:userIDList callBack:^(ZIMKitGroupInfo * _Nullable groupInfo, NSArray<ZIMErrorUserInfo *> * _Nullable errorUserList, ZIMError * _Nullable errorInfo) {
             @strongify(self);
             if (errorInfo.code == ZIMErrorCodeSuccess) {
                 if (errorUserList.count> 0) {
@@ -114,7 +100,7 @@
         NSString *groupID = self.userIDFiled.text;
         
         @weakify(self);
-        [self.groupVm joinGroup:groupID callBack:^(ZIMKitGroupInfo * _Nullable groupInfo, ZIMError * _Nullable errorInfo) {
+        [ZIMKitManager.shared joinGroup:groupID callBack:^(ZIMKitGroupInfo * _Nullable groupInfo, ZIMError * _Nullable errorInfo) {
             @strongify(self);
             if (errorInfo.code == ZIMErrorCodeSuccess) {
                 
@@ -146,7 +132,7 @@
 - (void)removeSelfVCFromNav {
     NSMutableArray *vcArr = [[NSMutableArray alloc]initWithArray:self.navigationController.viewControllers];
     for (UIViewController *vc in vcArr) {
-       if ([vc isKindOfClass:[ZIMKitCreateChatController class]]) {
+       if ([vc isKindOfClass:[CreateChatController class]]) {
            [vcArr removeObject:vc];
            break;
        }

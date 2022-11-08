@@ -12,9 +12,6 @@
 - (void)fromZIMConversationWith:(ZIMConversation *)con {
     self.conversationID = con.conversationID;
     self.conversationName = con.conversationName;
-    if (!self.conversationName.length) {
-        self.conversationName = con.conversationID;
-    }
     self.conversationAvatar = con.conversationAvatarUrl;
     self.type = con.type;
     self.unreadMessageCount = con.unreadMessageCount;

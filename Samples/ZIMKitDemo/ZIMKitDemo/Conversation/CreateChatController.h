@@ -1,5 +1,5 @@
 //
-//  ZIMKitCreateChatController.h
+//  CreateChatController.h
 //  ZIMKit
 //
 //  Created by zego on 2022/5/23.
@@ -20,7 +20,7 @@ typedef NS_ENUM(NSUInteger, ZIMKitCreateChatType) {
 NS_ASSUME_NONNULL_BEGIN
 
 
-@interface ZIMKitCreateChatController : UIViewController
+@interface CreateChatController : UIViewController
 
 @property (nonatomic, assign) ZIMKitCreateChatType createType;
 

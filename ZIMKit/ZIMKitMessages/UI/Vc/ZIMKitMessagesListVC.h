@@ -16,6 +16,16 @@
 #import "ZIMKitVideoMessage.h"
 #import "ZIMKitMessagesVM.h"
 
+typedef NS_ENUM(NSUInteger, ZIMKitConversationType) {
+ 
+    /// 单聊
+    ZIMKitConversationTypePeer = 0,
+ 
+    /// 群聊
+    ZIMKitConversationTypeGroup = 2
+ 
+};
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface ZIMKitMessagesListVC : ZIMKitBaseViewController
@@ -42,8 +52,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param conversationType : session type.
 /// @param conversationName : session name.
 - (instancetype)initWithConversationID:(NSString *)conversationID
-                      conversationType:(ZIMConversationType)conversationType
+                      conversationType:(ZIMKitConversationType)conversationType
                       conversationName:(nullable NSString *)conversationName;
+
+/// Create the session page
+///
+/// Description: Create a session page VC first, then you can create a session page by pushing or presenting the VC.
+///
+/// @param conversationID : session ID.
+/// @param conversationType : session type.
+- (instancetype)initWithConversationID:(NSString *)conversationID
+                      conversationType:(ZIMKitConversationType)conversationType;
 
 - (UITableView *)messageTableView;
 

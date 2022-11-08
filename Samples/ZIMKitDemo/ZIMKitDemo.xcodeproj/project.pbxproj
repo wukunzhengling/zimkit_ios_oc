@@ -17,14 +17,12 @@
 		86656F66286C62E60031C59C /* ZIMKitDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86656F65286C62E60031C59C /* ZIMKitDemoTests.m */; };
 		86656F70286C62E60031C59C /* ZIMKitDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86656F6F286C62E60031C59C /* ZIMKitDemoUITests.m */; };
 		86656F72286C62E60031C59C /* ZIMKitDemoUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 86656F71286C62E60031C59C /* ZIMKitDemoUITestsLaunchTests.m */; };
+		86862E0D291A5575004C22D2 /* AlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 86862E09291A5575004C22D2 /* AlertView.m */; };
+		86862E0E291A5575004C22D2 /* CreateChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86862E0B291A5575004C22D2 /* CreateChatController.m */; };
 		86EEDB28286C69F1002E6C29 /* ZIMKitDemoLocal.strings in Resources */ = {isa = PBXBuildFile; fileRef = 86EEDB2A286C69F1002E6C29 /* ZIMKitDemoLocal.strings */; };
 		86EEDB31286C6C6C002E6C29 /* KeyCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB2F286C6C6C002E6C29 /* KeyCenter.m */; };
-		86EEDB40286C6CFC002E6C29 /* UIView+KitDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB35286C6CFC002E6C29 /* UIView+KitDemo.m */; };
-		86EEDB41286C6CFC002E6C29 /* NSObject+KitDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB36286C6CFC002E6C29 /* NSObject+KitDemo.m */; };
-		86EEDB42286C6CFC002E6C29 /* ZIMKitDemoNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB3A286C6CFC002E6C29 /* ZIMKitDemoNavigationController.m */; };
 		86EEDB43286C6CFC002E6C29 /* HelpCenter.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB3D286C6CFC002E6C29 /* HelpCenter.m */; };
 		86EEDB44286C6CFC002E6C29 /* UIImage+KitDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB3E286C6CFC002E6C29 /* UIImage+KitDemo.m */; };
-		86EEDB45286C6CFC002E6C29 /* NSString+KitDemo.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB3F286C6CFC002E6C29 /* NSString+KitDemo.m */; };
 		86EEDB98286C7056002E6C29 /* ConversationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB93286C7056002E6C29 /* ConversationController.m */; };
 		86EEDBA7286C94F3002E6C29 /* ZegoBadgeButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDB9E286C94F3002E6C29 /* ZegoBadgeButton.m */; };
 		86EEDBA8286C94F3002E6C29 /* ZegoTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 86EEDBA2286C94F3002E6C29 /* ZegoTabBarController.m */; };
@@ -69,6 +67,10 @@
 		86656F6B286C62E60031C59C /* ZIMKitDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZIMKitDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86656F6F286C62E60031C59C /* ZIMKitDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZIMKitDemoUITests.m; sourceTree = "<group>"; };
 		86656F71286C62E60031C59C /* ZIMKitDemoUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZIMKitDemoUITestsLaunchTests.m; sourceTree = "<group>"; };
+		86862E09291A5575004C22D2 /* AlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertView.m; sourceTree = "<group>"; };
+		86862E0A291A5575004C22D2 /* CreateChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CreateChatController.h; sourceTree = "<group>"; };
+		86862E0B291A5575004C22D2 /* CreateChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CreateChatController.m; sourceTree = "<group>"; };
+		86862E0C291A5575004C22D2 /* AlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertView.h; sourceTree = "<group>"; };
 		86EEDB29286C69F1002E6C29 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ZIMKitDemoLocal.strings; sourceTree = "<group>"; };
 		86EEDB2B286C6A16002E6C29 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		86EEDB2C286C6A16002E6C29 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
@@ -76,18 +78,10 @@
 		86EEDB2F286C6C6C002E6C29 /* KeyCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeyCenter.m; sourceTree = "<group>"; };
 		86EEDB30286C6C6C002E6C29 /* KeyCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeyCenter.h; sourceTree = "<group>"; };
 		86EEDB32286C6C9C002E6C29 /* ZIMKitDemoPrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIMKitDemoPrefixHeader.pch; sourceTree = "<group>"; };
-		86EEDB34286C6CFC002E6C29 /* ZIMKitDemoNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZIMKitDemoNavigationController.h; sourceTree = "<group>"; };
-		86EEDB35286C6CFC002E6C29 /* UIView+KitDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+KitDemo.m"; sourceTree = "<group>"; };
-		86EEDB36286C6CFC002E6C29 /* NSObject+KitDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+KitDemo.m"; sourceTree = "<group>"; };
 		86EEDB37286C6CFC002E6C29 /* HelpCenter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpCenter.h; sourceTree = "<group>"; };
-		86EEDB38286C6CFC002E6C29 /* NSString+KitDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+KitDemo.h"; sourceTree = "<group>"; };
 		86EEDB39286C6CFC002E6C29 /* UIImage+KitDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+KitDemo.h"; sourceTree = "<group>"; };
-		86EEDB3A286C6CFC002E6C29 /* ZIMKitDemoNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZIMKitDemoNavigationController.m; sourceTree = "<group>"; };
-		86EEDB3B286C6CFC002E6C29 /* NSObject+KitDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+KitDemo.h"; sourceTree = "<group>"; };
-		86EEDB3C286C6CFC002E6C29 /* UIView+KitDemo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+KitDemo.h"; sourceTree = "<group>"; };
 		86EEDB3D286C6CFC002E6C29 /* HelpCenter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpCenter.m; sourceTree = "<group>"; };
 		86EEDB3E286C6CFC002E6C29 /* UIImage+KitDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+KitDemo.m"; sourceTree = "<group>"; };
-		86EEDB3F286C6CFC002E6C29 /* NSString+KitDemo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+KitDemo.m"; sourceTree = "<group>"; };
 		86EEDB93286C7056002E6C29 /* ConversationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConversationController.m; sourceTree = "<group>"; };
 		86EEDB97286C7056002E6C29 /* ConversationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConversationController.h; sourceTree = "<group>"; };
 		86EEDB9D286C94F3002E6C29 /* ZegoTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZegoTabBarController.h; sourceTree = "<group>"; };
@@ -210,16 +204,8 @@
 			children = (
 				86EEDB37286C6CFC002E6C29 /* HelpCenter.h */,
 				86EEDB3D286C6CFC002E6C29 /* HelpCenter.m */,
-				86EEDB3B286C6CFC002E6C29 /* NSObject+KitDemo.h */,
-				86EEDB36286C6CFC002E6C29 /* NSObject+KitDemo.m */,
-				86EEDB38286C6CFC002E6C29 /* NSString+KitDemo.h */,
-				86EEDB3F286C6CFC002E6C29 /* NSString+KitDemo.m */,
 				86EEDB39286C6CFC002E6C29 /* UIImage+KitDemo.h */,
 				86EEDB3E286C6CFC002E6C29 /* UIImage+KitDemo.m */,
-				86EEDB3C286C6CFC002E6C29 /* UIView+KitDemo.h */,
-				86EEDB35286C6CFC002E6C29 /* UIView+KitDemo.m */,
-				86EEDB34286C6CFC002E6C29 /* ZIMKitDemoNavigationController.h */,
-				86EEDB3A286C6CFC002E6C29 /* ZIMKitDemoNavigationController.m */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -227,6 +213,10 @@
 		86EEDB92286C7056002E6C29 /* Conversation */ = {
 			isa = PBXGroup;
 			children = (
+				86862E0C291A5575004C22D2 /* AlertView.h */,
+				86862E09291A5575004C22D2 /* AlertView.m */,
+				86862E0A291A5575004C22D2 /* CreateChatController.h */,
+				86862E0B291A5575004C22D2 /* CreateChatController.m */,
 				86EEDB93286C7056002E6C29 /* ConversationController.m */,
 				86EEDB97286C7056002E6C29 /* ConversationController.h */,
 			);
@@ -455,20 +445,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				86EEDB31286C6C6C002E6C29 /* KeyCenter.m in Sources */,
-				86EEDB40286C6CFC002E6C29 /* UIView+KitDemo.m in Sources */,
 				86EEDBB1286C9573002E6C29 /* LoginViewController.m in Sources */,
 				86656F51286C62E40031C59C /* ViewController.m in Sources */,
 				86EEDB44286C6CFC002E6C29 /* UIImage+KitDemo.m in Sources */,
 				86656F4B286C62E40031C59C /* AppDelegate.m in Sources */,
-				86EEDB45286C6CFC002E6C29 /* NSString+KitDemo.m in Sources */,
 				86EEDBA9286C94F3002E6C29 /* ZegoTabBar.m in Sources */,
 				86EEDBA7286C94F3002E6C29 /* ZegoBadgeButton.m in Sources */,
 				86EEDBA8286C94F3002E6C29 /* ZegoTabBarController.m in Sources */,
-				86EEDB42286C6CFC002E6C29 /* ZIMKitDemoNavigationController.m in Sources */,
 				86EEDBAB286C94F3002E6C29 /* ZegoBadgeView.m in Sources */,
 				86656F5C286C62E50031C59C /* main.m in Sources */,
-				86EEDB41286C6CFC002E6C29 /* NSObject+KitDemo.m in Sources */,
+				86862E0E291A5575004C22D2 /* CreateChatController.m in Sources */,
 				86EEDB43286C6CFC002E6C29 /* HelpCenter.m in Sources */,
+				86862E0D291A5575004C22D2 /* AlertView.m in Sources */,
 				86EEDB98286C7056002E6C29 /* ConversationController.m in Sources */,
 				86EEDBAA286C94F3002E6C29 /* ZegoTabBarButton.m in Sources */,
 			);

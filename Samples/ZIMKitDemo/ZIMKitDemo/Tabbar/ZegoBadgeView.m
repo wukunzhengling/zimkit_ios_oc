@@ -33,7 +33,7 @@
 }
 
 - (void)setupUI {
-    self.backgroundColor = [UIColor redColor];
+    self.backgroundColor = BSRGBColor(0xFF4A50);
     [self addSubview:self.label];
 }
 

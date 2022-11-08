@@ -6,20 +6,23 @@
 //
 
 #import "ConversationController.h"
+#import "AlertView.h"
+#import "CreateChatController.h"
+
+#define kZEGO @"In-app Chat"
 
 @interface ConversationController ()<ZIMKitManagerDelegate>
-@property (nonatomic, strong) ZIMKitAlertView *alertView;
+@property (nonatomic, strong) AlertView *alertView;
 @end
 
 @implementation ConversationController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.navigationItem.title = @"ZEGO IM";
-
-    //设置ZIMKit 代理
+    self.navigationItem.title = kZEGO;
+    
+    //ZIMKit delegate
     ZIMKitManager.shared.delegate = self;
-    //导航栏
     [self setupNav];
 }
 
@@ -29,7 +32,7 @@
     [self.alertView dismiss];
 }
 
-#pragma mark ZIMKitConversationListVCDelegate
+#pragma mark ZIMKitManagerDelegate
 - (void)onTotalUnreadMessageCountChange:(NSInteger)totalCount {
     self.tabBarItem.badgeValue = totalCount ? [NSString stringWithFormat:@"%@", totalCount > 99 ? @"99+" : @(totalCount)] : nil;
 }
@@ -40,14 +43,14 @@
         [self leftBarButtonClick:nil];
     }];
     [alter addAction:sure];
-    //延迟0.25s, 聊天界面正在播放视频消息时,先播放界面消失,在弹alter
+    //The delay is 0.25s. When the video message is playing on the chat interface, the playback interface disappears first, and then play alter
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.25 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         [self presentViewController:alter animated:true completion:nil];
     });
 }
 
 - (void)onConnectionStateChange:(ZIMConnectionState)state event:(ZIMConnectionEvent)event {
-    NSString *title = @"ZEGO IM";
+    NSString *title = kZEGO;
     if (event == ZIMConnectionEventKickedOut) {
         [self onUserAccountKickedOut];
         return;
@@ -58,7 +61,7 @@
     } else if (state == ZIMConnectionStateDisconnected) {
         title = [NSString stringWithFormat:@"%@(%@)",title,[NSBundle ZIMKitlocalizedStringForKey:@"conversation_disconnected"]];
     } else {
-        title = @"Zego IM";
+        title = kZEGO;
     }
     self.navigationItem.title = title;
 }
@@ -83,7 +86,6 @@
     self.navigationItem.rightBarButtonItem = moreItem;
 }
 
-
 - (void)leftBarButtonClick:(UIButton *)left {
     [[ZIMKitManager shared] disconnectUser];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"logout" object:nil];
@@ -97,7 +99,7 @@
     NSArray *titles = @[KitDemoLocalizedString(@"conversation_start_single_chat", LocalizedDemoKey, nil),
                         KitDemoLocalizedString(@"conversation_start_group_chat", LocalizedDemoKey, nil),
                         KitDemoLocalizedString(@"conversation_join_group_chat", LocalizedDemoKey, nil)];
-    ZIMKitAlertView *alertView = [[ZIMKitAlertView alloc] initWithFrame:self.navigationController.view.bounds superView:self.navigationController.view contentSize:CGSizeZero titles:titles];
+    AlertView *alertView = [[AlertView alloc] initWithFrame:self.navigationController.view.bounds superView:self.navigationController.view contentSize:CGSizeZero titles:titles];
     @weakify(self);
     alertView.actionBlock = ^(NSInteger index) {
         @strongify(self);
@@ -108,17 +110,13 @@
 }
 
 - (void)createChatWithIndex:(NSInteger)index {
-    ZIMKitCreateChatController *vc = [[ZIMKitCreateChatController alloc] init];
+    CreateChatController *vc = [[CreateChatController alloc] init];
     if (index == 1) {
-        
         vc.createType = ZIMKitCreateChatTypeSingle;
         [self.navigationController pushViewController:vc animated:true];
-        
     } else if (index == 2){
-        
         vc.createType = ZIMKitCreateChatTypeGroup;
         [self.navigationController pushViewController:vc animated:true];
-        
     } else if(index == 3) {
         vc.createType = ZIMKitCreateChatTypeJoin;
         [self.navigationController pushViewController:vc animated:true];

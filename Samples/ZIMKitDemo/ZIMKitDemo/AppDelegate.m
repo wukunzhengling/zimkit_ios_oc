@@ -32,7 +32,7 @@
     self.window.rootViewController = [[ZIMKitNavigationController alloc] initWithRootViewController:loginVc];
     [self configBugly];
     
-    //注册通知
+    //Registration Notice
     [self registerNotification];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginSuccess) name:@"loginSuccess" object:nil];
@@ -41,12 +41,12 @@
 }
 
 - (void)configBugly {
-#if !DEBUG
+    #if !DEBUG
     BuglyConfig *config = [BuglyConfig new];
     config.blockMonitorEnable = YES;
     [Bugly setUserValue:ZIM.getVersion forKey:@"ZIM_Version"];
     [Bugly startWithAppId:@"81823fe9a0" config:config];
-#endif
+    #endif
 }
 
 - (void)loginSuccess {
@@ -60,7 +60,6 @@
 
 - (void)registerNotification {
     UIApplication *application = [UIApplication sharedApplication];
-    // 获取通知中心实例
     if (@available(iOS 10.0, *)) {
         UNUserNotificationCenter *center = [UNUserNotificationCenter currentNotificationCenter];
         [center requestAuthorizationWithOptions:UNAuthorizationOptionAlert | UNAuthorizationOptionSound | UNAuthorizationOptionBadge completionHandler:^(BOOL granted, NSError * _Nullable error) {
@@ -68,7 +67,6 @@
                 NSLog(@"request authorization failed");
                 return;
             }
-            // 为 notficationCenter 设置代理，以便进行消息接收的回调
             center.delegate = self;
             dispatch_async(dispatch_get_main_queue(), ^{
                 [application registerForRemoteNotifications];
@@ -83,10 +81,9 @@
 }
 #pragma mark - <UNUserNotificationCenterDelegate>
 /**
-   ios  8-10 之前 点击本地推送 触发的方法
+   ios  8-10
  */
  -(void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification{
-     // 用户在前台
     if (application.applicationState == UIApplicationStateInactive ) {
         return;
     } else{
@@ -103,9 +100,9 @@
     NSString *conversationID = userInfo[@"conversationID"];
     NSInteger conversationType = [userInfo[@"conversationType"] integerValue];
     if([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) {
-        // 远程通知
+        // remoteNotification
     } else {
-        // 本地通知
+        // localNotification
         [self didlocalNotificationResponse:conversationID conversationType:conversationType conversationName:nil];
     }
     completionHandler();
@@ -127,10 +124,8 @@
     }
     UIViewController *currVc = [HelpCenter currentViewController];
     if ([currVc isKindOfClass:ConversationController.class]) {
-//        ZIMKitMessagesListVC *chatVc = [[ZIMKitMessagesListVC alloc] initWithConversationID:conversationID conversationType:conversationType conversationName:nil];
-//        [currVc.navigationController pushViewController:chatVc animated:true];
-        NSDictionary *param = @{@"conversationID" : conversationID, @"conversationType" : @(conversationType), @"conversationName" : @""};
-        self.router.openUrlWithParam(router_chatListUrl, param);
+        ZIMKitMessagesListVC *chatVc = [[ZIMKitMessagesListVC alloc] initWithConversationID:conversationID conversationType:conversationType];
+        [currVc.navigationController pushViewController:chatVc animated:true];
     }
 }
 

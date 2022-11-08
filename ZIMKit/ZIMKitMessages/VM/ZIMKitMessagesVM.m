@@ -47,15 +47,21 @@
   onMessageAttached:(ZIMMessageAttachedCallback)onMessageAttached
            callBack:(ZIMKitMessageCallback)callBack {
     NSAssert(conversationID,  @"The conversationID should not be nil.");
+    
+    [self addKitMessage:message];
+    if (self.delegate && [self.delegate respondsToSelector:@selector(onDataSourceChange:)]) {
+        [self.delegate onDataSourceChange:conversationID];
+    }
+    
     ZIMMessage *sendMessage = [ZIMKitMessageTool fromZIMKitMessageConvert:message];
     
     @weakify(self);
     ZIMMessageSendNotification *noti = [[ZIMMessageSendNotification alloc] init];
     noti.onMessageAttached = onMessageAttached;
-    [ZIMKitManagerZIM sendMessage:sendMessage toConversationID:conversationID conversationType:conversationType config:config notification:noti callback:^(ZIMMessage * _Nonnull message, ZIMError * _Nonnull errorInfo) {
+    [ZIMKitManagerZIM sendMessage:sendMessage toConversationID:conversationID conversationType:conversationType config:config notification:noti callback:^(ZIMMessage * _Nonnull message1, ZIMError * _Nonnull errorInfo) {
         @strongify(self);
         if (callBack) {
-            ZIMKitMessage *kitMessage = [ZIMKitMessageTool fromZIMMessageConvert:message];
+            ZIMKitMessage *kitMessage = [ZIMKitMessageTool fromZIMMessageUpdate:message1 originMsg:message];
             /// User does not have system message prompt
             if (errorInfo.code == ZIMErrorCodeMessageModuleTargetDoseNotExist && conversationType == ZIMConversationTypePeer) {
                 ZIMKitSystemMessage *sysMessage = [[ZIMKitSystemMessage alloc] init];
@@ -66,8 +72,8 @@
                 [self addKitMessage:sysMessage];
             }
             
-            [self addKitMessage:kitMessage];
-            
+            [self findOriginMessage:kitMessage originMessage:message];
+                        
             callBack(kitMessage, errorInfo);
         }
     }];

@@ -9,9 +9,7 @@
 #import "ZIMKitConversationCell.h"
 #import "ZIMKitConversationListNoDataView.h"
 #import "ZIMKitConversationVM.h"
-#import "ZIMKitCreateChatController.h"
 #import "ZegoRefreshAutoFooter.h"
-#import "ZIMKitAlertView.h"
 
 #define kConversationCell_ReuseId @"ZIMKitConversationCell"
 
@@ -65,15 +63,6 @@
     
     _noDataView = [[ZIMKitConversationListNoDataView alloc] initWithFrame:CGRectMake(0, 0, self.view.bounds.size.width, self.view.bounds.size.height)];
     _noDataView.hidden = YES;
-    @weakify(self);
-    _noDataView.createChatActionBlock = ^{
-        @strongify(self);
-        if (self.isFirstLoadDataFail) {
-            [self loadData];
-        } else {
-            [self createChatAlert];
-        }
-    };
     [self.view addSubview:_noDataView];
     
     /// Pull up to load more
@@ -109,7 +98,7 @@
             NSLog(@"--------------- error mesage is %@", errorInfo.message);
             self.isFirstLoadDataFail = isFirstLoad;
             if (isFirstLoad) {
-                [self.noDataView setTitle:[NSBundle ZIMKitlocalizedStringForKey:@"conversation_reload"]];
+                
             } else {
                 [self.view makeToast:errorInfo.message];
             }
@@ -141,6 +130,7 @@
     ZIMKitConversationModel *data = self.conversationVM.coversationList[indexPath.row];
     
     NSDictionary *param = @{@"conversationID" : data.conversationID, @"conversationType" : @(data.type), @"conversationName" : data.conversationName ?:@""};
+
     self.router.openUrlWithParam(router_chatListUrl, param);
     
     [self runInMainThreadAsync:^{
@@ -206,32 +196,6 @@
 #pragma mark ZIMKitConversationVMDelegate
 - (void)onConversationListChange:(NSArray<ZIMKitConversationModel *> *_Nullable)conversationList {
     [self.tableView reloadData];
-}
-
-- (void)createChatAlert {
-    NSArray *titles = @[[NSBundle ZIMKitlocalizedStringForKey:@"conversation_start_single_chat"],
-                        [NSBundle ZIMKitlocalizedStringForKey:@"conversation_start_group_chat"],
-                        [NSBundle ZIMKitlocalizedStringForKey:@"conversation_join_group_chat"]];
-    ZIMKitAlertView *alertView = [[ZIMKitAlertView alloc] initWithFrame:self.navigationController.view.bounds superView:self.navigationController.view contentSize:CGSizeZero titles:titles];
-    @weakify(self);
-    alertView.actionBlock = ^(NSInteger index) {
-        @strongify(self);
-        [self createChatWithIndex:index];
-    };
-    [alertView show];
-}
-
-- (void)createChatWithIndex:(NSInteger)index {
-    
-    if (index == 1) {
-        self.router.openUrlWithParam(router_CreateChatUrl,@{@"createType" : @(ZIMKitCreateChatTypeSingle)});
-        
-    } else if (index == 2){
-        self.router.openUrlWithParam(router_CreateChatUrl,@{@"createType" : @(ZIMKitCreateChatTypeGroup)});
-        
-    } else if(index == 3) {
-        self.router.openUrlWithParam(router_CreateChatUrl,@{@"createType" : @(ZIMKitCreateChatTypeJoin)});
-    }
 }
 
 - (void)dealloc {

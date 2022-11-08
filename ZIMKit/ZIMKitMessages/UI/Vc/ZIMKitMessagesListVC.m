@@ -22,8 +22,8 @@
 #import "ZIMKitAudioMessage.h"
 #import "ZIMKitVideoMessage.h"
 #import "ZIMKitFileMessage.h"
-#import "ZIMKitDefine.h"
 #import "ZIMKitTool.h"
+#import "ZIMKitDefine.h"
 #import "ZIMKitMessagesListVC+Meida.h"
 #import "ZIMKitMessagesListVC+MessageAction.h"
 
@@ -67,11 +67,22 @@
 
 @implementation ZIMKitMessagesListVC
 
-- (instancetype)initWithConversationID:(NSString *)conversationID conversationType:(ZIMConversationType)conversationType conversationName:(NSString *)conversationName {
+- (instancetype)initWithConversationID:(NSString *)conversationID
+                      conversationType:(ZIMKitConversationType)conversationType {
+    if (self = [super init]) {
+        self.conversationID = conversationID;
+        self.conversationType = (ZIMConversationType)conversationType;
+    }
+    return self;
+}
+
+- (instancetype)initWithConversationID:(NSString *)conversationID
+                      conversationType:(ZIMKitConversationType)conversationType
+                      conversationName:(nullable NSString *)conversationName {
     if (self = [super init]) {
         self.conversationID = conversationID;
         self.conversationName = conversationName;
-        self.conversationType = conversationType;
+        self.conversationType = (ZIMConversationType)conversationType;
     }
     return self;
 }
@@ -79,7 +90,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = self.conversationName;
+    self.title = [self getChatTitle];
     
     self.view.backgroundColor = [UIColor dynamicColor:ZIMKitHexColor(0xF2F2F2) lightColor:ZIMKitHexColor(0xF2F2F2)];
     [self setupViews];
@@ -101,12 +112,19 @@
     return _messageTableView;
 }
 
+- (NSString *)getChatTitle {
+    NSString *title = self.conversationName;
+    
+    if(self.conversationType == ZIMConversationTypePeer) {
+        title = self.conversationName.length ? self.conversationName : [NSBundle ZIMKitlocalizedStringForKey:@"message_title_chat"];
+    } else if (self.conversationType == ZIMConversationTypeGroup) {
+        title = self.conversationName.length ? self.conversationName : [NSBundle ZIMKitlocalizedStringForKey:@"message_title_group_chat"];
+    }
+    return title;
+}
+
 - (void)setupViews {
     CGRect rect = CGRectMake(0, 0, self.view.frame.size.width, self.view.height - ZIMKitChatToolBarHeight - Bottom_SafeHeight);
-//    if (![UINavigationBar appearance].isTranslucent && [[[UIDevice currentDevice] systemVersion] doubleValue]<15.0) {
-//        rect = CGRectMake(rect.origin.x, rect.origin.y , rect.size.width, self.view.height - ZIMKitChatToolBarHeight - Bottom_SafeHeight);
-//    }
-    
     _messageTableView = [[UITableView alloc] initWithFrame:rect style:UITableViewStylePlain];
     _messageTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     _messageTableView.tableFooterView = [[UIView alloc] init];
@@ -279,12 +297,13 @@
                 [self.messageTableView reloadData];
             }
         }];
-    } else if (self.conversationType == ZIMConversationTypeGroup && !self.title) {
+    } else if (self.conversationType == ZIMConversationTypeGroup) {
         @weakify(self);
         [self.messageVM queryGroupInfoWithGroupID:self.conversationID callback:^(ZIMGroupFullInfo * _Nonnull groupInfo, ZIMError * _Nonnull errorInfo) {
             @strongify(self);
             if (groupInfo) {
                 self.title = groupInfo.baseInfo.groupName;
+                self.conversationName = groupInfo.baseInfo.groupName;
             }
         }];
     }
@@ -465,9 +484,7 @@
         return;
     }
     
-    ZIMKitTextMessage *msg = [[ZIMKitTextMessage alloc] init];
-    msg.message = text;
-    msg.type = ZIMMessageTypeText;
+    ZIMKitTextMessage *msg = [[ZIMKitTextMessage alloc] initWith:text];
     ZIMMessageSendConfig *msgConfig = [[ZIMMessageSendConfig alloc] init];
 
     @weakify(self);
@@ -531,8 +548,8 @@
 
 - (void)scrollToBottomWithAnimated: (BOOL)animated {
     if(self.messageVM.messageList.count > 0){
-//        NSInteger lastRowIndex = [self.messageTableView numberOfRowsInSection:0] - 1;
-        NSInteger lastRowIndex = self.messageVM.messageList.count - 1;
+        NSInteger lastRowIndex = [self.messageTableView numberOfRowsInSection:0] - 1;
+//        NSInteger lastRowIndex = self.messageVM.messageList.count - 1;
         if(lastRowIndex > 0){
             NSIndexPath*lastIndexPath = [NSIndexPath indexPathForRow: lastRowIndex inSection: 0];
             [self.messageTableView scrollToRowAtIndexPath:lastIndexPath atScrollPosition: UITableViewScrollPositionBottom animated:animated];

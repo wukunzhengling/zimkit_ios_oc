@@ -1,11 +1,11 @@
 //
-//  ZIMKitAlertView.m
+// AlertView.m
 //  ZIMKit
 //
 //  Created by zego on 2022/7/5.
 //
 
-#import "ZIMKitAlertView.h"
+#import "AlertView.h"
 #import "ZIMKitDefine.h"
 #import "ZIMKitTool.h"
 
@@ -15,7 +15,7 @@
 #define lineH 1
 #define lineW 24
 
-@interface ZIMKitAlertView ()
+@interface AlertView ()
 
 /// super view
 @property (nonatomic, strong) UIView *parentview;
@@ -30,7 +30,7 @@
 
 @end
 
-@implementation ZIMKitAlertView
+@implementation AlertView
 
 - (instancetype)initWithFrame:(CGRect)frame superView:(UIView *)superview contentSize:(CGSize)size titles:(NSArray<NSString *> *)titles
 {

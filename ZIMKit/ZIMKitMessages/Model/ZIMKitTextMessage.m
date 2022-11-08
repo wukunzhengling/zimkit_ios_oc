@@ -11,6 +11,16 @@
 
 @implementation ZIMKitTextMessage
 
+- (instancetype)initWith:(NSString *)text {
+    self = [super init];
+    if (self) {
+        self.message = text;
+        self.type = ZIMMessageTypeText;
+        self.timestamp = [[NSDate date] timeIntervalSince1970]*1000;
+    }
+    return self;
+}
+
 - (void)fromZIMMessage:(ZIMTextMessage *)message {
     [super fromZIMMessage:message];
     self.message = message.message;

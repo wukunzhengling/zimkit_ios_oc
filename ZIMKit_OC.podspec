@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZIMKit_OC'
-  s.version          = '0.1.8'
+  s.version          = '0.1.9'
   s.summary          = 'ZIM UIKit of Objective_C'
 
 # This description is used to generate tags and improve search results.
@@ -67,5 +67,5 @@ TODO: Add long description of the pod here.
    s.dependency 'MJRefresh', '3.1.15.3'
    s.dependency 'TZImagePickerController', '3.8.3'
    s.dependency 'SDWebImage', '~>5.13.2'
-   s.dependency 'ZIM', '2.4.0'
+   s.dependency 'ZIM', '2.4.2'
 end

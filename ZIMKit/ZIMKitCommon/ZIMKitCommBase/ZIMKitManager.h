@@ -9,6 +9,12 @@
 #import "ZIMKitUserInfo.h"
 #import <ZIM/ZIM.h>
 
+@class ZIMKitGroupInfo, ZIMKitGroupMember;
+
+typedef void(^ZIMKitConnectUserCallBlock) (ZIMError * _Nullable errorInfo);
+typedef void (^ZIMKitJoinGroupCallback)(ZIMKitGroupInfo  *_Nullable groupInfo, ZIMError * _Nullable errorInfo);
+typedef void (^ZIMKitCreateGroupCallback)(ZIMKitGroupInfo  *_Nullable groupInfo,NSArray<ZIMErrorUserInfo *> * _Nullable errorUserList, ZIMError * _Nullable errorInfo);
+
 @protocol ZIMKitManagerDelegate <NSObject>
 
 /// Callback for updates on the connection status changes.
@@ -54,10 +60,26 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param userInfo : user info
 /// @param callback : callback for the results that whether the connection is successful.
 - (void)connectUser:(ZIMKitUserInfo *)userInfo
-     callback:(ZIMLoggedInCallback)callback;
+     callback:(ZIMKitConnectUserCallBlock)callback;
 
 /// Disconnects current user from ZIMKit server.
 - (void)disconnectUser;
+
+/// Create group chat
+///
+/// @param groupName group name
+/// @param userIDList Group member ID list
+/// @param callBack callback
+- (void)createGroup:(NSString *)groupName
+         userIDList:(NSArray <NSString *>*)userIDList
+           callBack:(ZIMKitCreateGroupCallback)callBack;
+
+/// Join group chat
+///
+/// @param groupID groupID
+/// @param callBack callback
+- (void)joinGroup:(NSString *)groupID callBack:(ZIMKitJoinGroupCallback)callBack;
+
 
 /// Update the user avatar
 ///

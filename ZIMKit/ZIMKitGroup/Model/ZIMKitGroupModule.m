@@ -22,14 +22,6 @@
         ZIMKitGroupDetailController *groupDetailVC = [[ZIMKitGroupDetailController alloc] initWithGroupID:groupID groupName:conversationName];
         [self jumpTovc:type nav:nav fromeV:fromVC toVC:groupDetailVC];
     }];
-    
-    [[ZIMKitRouter shareInstance] registerURLPattern:router_CreateChatUrl Class:[ZIMKitCreateChatController class] toHandler:^(id param, UINavigationController *nav, JumpType type, UIViewController *fromVC) {
-        
-        ZIMKitCreateChatController *vc = [[ZIMKitCreateChatController alloc] init];
-        ZIMKitCreateChatType createType = (ZIMKitCreateChatType)[param[@"createType"] intValue];
-        vc.createType = createType;
-        [self jumpTovc:type nav:nav fromeV:fromVC toVC:vc];
-    }];
 }
 
 @end

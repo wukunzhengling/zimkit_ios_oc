@@ -16,9 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *groupName;
 
-@property (nonatomic, copy) NSString *groupNotice;
-
-@property (nonatomic, strong) NSDictionary *groupAttribution;
+@property (nonatomic, copy) NSString *groupAvatarUrl;
 
 /// 从SDKZIMGroupFullInfo ->ZIMKitGroupInfo
 - (void)fromZIMGroupFullInfo:(ZIMGroupFullInfo*)info;

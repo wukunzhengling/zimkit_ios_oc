@@ -8,37 +8,9 @@
 #import "ZIMKitGroupVM.h"
 #import "ZIMKitGroupInfo.h"
 #import "ZIMKitGroupMember.h"
-#import "ZIMKitDefine.h"
+
 
 @implementation ZIMKitGroupVM
-
-- (void)createGroup:(NSString *)groupID
-          groupName:(NSString *)groupName
-         userIDList:(NSArray <NSString *>*)userIDList
-           callBack:(ZIMKitCreateGroupCallback)callBack {
-    ZIMGroupInfo *info = [[ZIMGroupInfo alloc] init];
-    info.groupID = groupID;
-    info.groupName = groupName;
-    
-    [ZIMKitManagerZIM createGroup:info userIDs:userIDList callback:^(ZIMGroupFullInfo * _Nonnull groupInfo, NSArray<ZIMGroupMemberInfo *> * _Nonnull userList, NSArray<ZIMErrorUserInfo *> * _Nonnull errorUserList, ZIMError * _Nonnull errorInfo) {
-        if (callBack) {
-            ZIMKitGroupInfo *info = [[ZIMKitGroupInfo alloc] init];
-            [info fromZIMGroupFullInfo:groupInfo];
-            callBack(info, errorUserList, errorInfo);
-        }
-    }];
-}
-
-- (void)joinGroup:(NSString *)groupID
-         callBack:(ZIMKitGroupCallback)callBack {
-    [ZIMKitManagerZIM joinGroup:groupID callback:^(ZIMGroupFullInfo * _Nonnull groupInfo, ZIMError * _Nonnull errorInfo) {
-        if (callBack) {
-            ZIMKitGroupInfo *info = [[ZIMKitGroupInfo alloc] init];
-            [info fromZIMGroupFullInfo:groupInfo];
-            callBack(info, errorInfo);
-        }
-    }];
-}
 
 - (void)queryGroupMemberListByGroupID:(NSString *)groupID
                                     config:(ZIMGroupMemberQueryConfig *)config

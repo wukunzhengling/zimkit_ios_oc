@@ -19,6 +19,7 @@
 
 - (void)longPressCellMessage:(ZIMKitMessage *)msg cell:(ZIMKitMessageCell *)cell menuType:(ZIMKitMenuType)menuType {
     if (menuType == ZIMKitMenuTypeDelete) {
+        [self.messageToolbar hiddeKeyborad];
         UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:[NSBundle ZIMKitlocalizedStringForKey:@"message_navbar_cancel"]
                                                                style:UIAlertActionStyleCancel
                                                              handler:^(UIAlertAction * _Nonnull action) {}];
@@ -36,6 +37,7 @@
         
         [self presentViewController:alertController animated:YES completion:nil];
     } else if (menuType == ZIMKitMenuTypeMuteplay || menuType == ZIMKitMenuTypeSpeakerplay) {
+        [self.messageToolbar hiddeKeyborad];
         [self voicePlaySwitchCategory:(ZIMKitAudioMessage *)msg menuType:menuType];
     } else if (menuType == ZIMKitMenuTypeMultiselect) {
         [self multiselect:msg cell:cell];

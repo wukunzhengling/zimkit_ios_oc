@@ -13,7 +13,7 @@
     return [UIImage imageNamed:imageName];
 }
 
-//通过颜色来生成一个纯色图片
+//Generate a solid color image by color
 +(UIImage *)imageFromColor:(UIColor *)color rectSize:(CGRect)Rect
 {
     UIGraphicsBeginImageContext(Rect.size);

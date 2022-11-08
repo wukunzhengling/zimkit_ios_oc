@@ -53,7 +53,6 @@
 "message_album" = "相册";
 "message_sendMessage_tip1" = "网络异常，请检查网络后重试";
 "message_sendMessage_image_tip" = "图片不符合规格，请处理后再发送";
-
 "message_voice_touch_normal" = "按住 说话";
 "message_voice_touch_release_to_cancel" = "松开 取消";
 "message_voice_touch_release_to_send" = "松开 发送";
@@ -62,23 +61,27 @@
 "message_voice_record_too_short" = "说话时间太短";
 "message_voice_play_switch_mute" = "已切换听筒播放";
 "message_voice_play_switch_playback" = "已切换扬声器播放";
-"message_voice_touch_tip_timeout" = "秒后停止录制";
+"message_voice_touch_tip_timeout" = "%d秒后停止录制";
 "message_micphone_permission_title" = "麦克风权限未开启";
 "message_micphone_permission_desc" = "不开启麦克风权限，无法在聊天功能中使用";
+"message_photolibrary_permission_title" = "相册权限未开启";
+"message_photolibrary_permission_desc" = "不开启相册权限，无法在聊天功能中使用";
 "message_access_later" = "以后再说";
 "message_go_setting" = "去开启";
 "message_file" = "文件";
-"message_file_download" = "下载文件";
-"message_file_open_others" = "更多打开方式";
 "message_menuitem_delete" = "删除";
 "message_menuitem_multiselect" = "多选";
 "message_menuitem_copy" = "复制";
-"message_menuitem_muteplay" = "静音播放";
+"message_menuitem_muteplay" = "听筒播放";
 "message_menuitem_speakerplay" = "扬声器播放";
 "message_navbar_cancel" = "取消";
-"message_file_send_empty_msg" = "不允许发送空文件";
+"message_file_send_empty_msg" = "无法发送空文件，请重新选择";
 "message_delete_tip" = "确认删除?";
-
+"message_image_size_invalid" = "图片不支持超过10MB，请压缩后重新发送";
+"message_video_size_invalid" = "视频不支持超过100MB，请处理后重新发送";
+"message_file_size_invalid" = "文件不支持超过100MB，请处理后重新发送";
+"message_title_chat" = "聊天";
+"message_title_group_chat" = "群聊";
 
 "group_input_group_name" = "输入群聊名称";
 "group_input_group_id" = "输入群ID";

@@ -12,6 +12,7 @@
 @implementation HelpCenter
 
 + (NSString *)getUserAvatar:(NSString *)userID {
+    if(!userID.length) return nil;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userinfo = [defaults objectForKey:HelperCenterCacheKey(userID)];
@@ -38,9 +39,9 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSDictionary *userinfo = [defaults objectForKey:HelperCenterCacheKey(userID)];
     userName = userinfo[@"userName"];
-    /// 随机生成
+    
     if (!userName) {
-        // 获取文件路径
+        // get file path
         NSString *path = [[NSBundle mainBundle] pathForResource:@"user_name" ofType:@"txt"];
         NSString *jsonStr  = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
         NSArray *names = [jsonStr componentsSeparatedByString:@"\n"];
@@ -56,7 +57,7 @@
     return userName;
 }
 
-//获取手机当前显示的ViewController
+//get current ViewController
 + (UIViewController *)currentViewController {
     UIViewController* vc = [UIApplication sharedApplication].keyWindow.rootViewController;
 

@@ -6,12 +6,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "ZIMKitDefine.h"
 #import <ZIM/ZIM.h>
 
 @class ZIMKitGroupInfo, ZIMKitGroupMember;
 
 typedef void (^ZIMKitGroupCallback)(ZIMKitGroupInfo  *_Nullable groupInfo, ZIMError * _Nullable errorInfo);
-typedef void (^ZIMKitCreateGroupCallback)(ZIMKitGroupInfo  *_Nullable groupInfo,NSArray<ZIMErrorUserInfo *> * _Nullable errorUserList, ZIMError * _Nullable errorInfo);
+//typedef void (^ZIMKitCreateGroupCallback)(ZIMKitGroupInfo  *_Nullable groupInfo,NSArray<ZIMErrorUserInfo *> * _Nullable errorUserList, ZIMError * _Nullable errorInfo);
 typedef void (^ZIMKitGroupMemberListQueriedCallback)(NSString *_Nullable groupID,
                                                      NSArray<ZIMKitGroupMember *> * _Nullable userList,
                                                      unsigned int nextFlag, ZIMError * _Nullable errorInfo);
@@ -38,23 +39,6 @@ NS_ASSUME_NONNULL_BEGIN
 @interface ZIMKitGroupVM : NSObject
 
 @property (nonatomic, weak) id<ZIMKitGroupVMDelegate>delegate;
-
-/// Create group chat
-///
-/// @param groupID groupID
-/// @param groupName group name
-/// @param userIDList Group member ID list
-/// @param callBack callback
-- (void)createGroup:(NSString *_Nullable)groupID
-          groupName:(NSString *)groupName
-         userIDList:(NSArray <NSString *>*)userIDList
-           callBack:(ZIMKitCreateGroupCallback)callBack;
-
-/// Join group chat
-///
-/// @param groupID groupID
-/// @param callBack callback
-- (void)joinGroup:(NSString *)groupID callBack:(ZIMKitGroupCallback)callBack;
 
 /// Query group members
 /// 

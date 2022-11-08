@@ -21,33 +21,11 @@
 
 - (void)updateTableViewLayout:(BOOL)isReceve {
     CGRect tRect = self.messageTableView.frame;
-    CGFloat tableviewHeight = CGRectGetHeight(tRect);
-    CGFloat contentHeight = self.messageTableView.contentSize.height;
-    CGFloat tableviewContentOffSetY = self.messageTableView.contentOffset.y;
-    
     CGFloat heiht = self.messageToolbar.inputBar.y;
     tRect.size.height = heiht;
-    CGFloat needUpHeight = (self.messageTableView.frame.size.height - self.messageToolbar.inputBar.frame.origin.y);
     
-//     if (self.messageTableView.contentSize.height < self.messageTableView.bounds.size.height) {
-//         CGFloat blankSpace = self.messageTableView.bounds.size.height-self.messageTableView.contentSize.height;
-//         if (blankSpace > needUpHeight) {
-//             needUpHeight = 0;
-//         } else {
-//             needUpHeight = needUpHeight - blankSpace;
-//         }
-//     }
-//
-//     tRect.origin.y = -needUpHeight;
-     self.messageTableView.frame = tRect;
-//     if (self.messageTableView.contentSize.height > self.messageTableView.bounds.size.height){
-//         [self scrollToBottom:NO];
-//     }
-   
-//
-//    if (contentHeight - tableviewHeight - tableviewContentOffSetY  >= tableviewHeight && isReceve) { //Prevent receiving messages from sliding to the bottom when scrolling to the top to view messages
-//        return;
-//    }
+    self.messageTableView.frame = tRect;
+    
     [self scrollToBottom:NO];
 }
 

@@ -1,7 +1,7 @@
 {
   "name": "ZIMKit_OC",
-  "version": "0.1.7.5",
-  "summary": "A short description of ZIMKit_OC.",
+  "version": "0.1.8",
+  "summary": "ZIM UIKit of Objective_C",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/wukunzhengling/zimkit_ios_oc",
   "license": {
@@ -13,15 +13,13 @@
   },
   "source": {
     "git": "https://github.com/wukunzhengling/zimkit_ios_oc.git",
-    "tag": "0.1.7.5"
+    "tag": "0.1.8"
   },
   "platforms": {
     "ios": "9.0"
   },
   "source_files": "ZIMKit/**/*.{h,m}",
-  "xcconfig": {
-    "VALID_ARCHS": "arm64 x86_64"
-  },
+  "cocoapods_version": ">= 1.10.0",
   "ios": {
     "resource_bundles": {
       "ChatResources": [

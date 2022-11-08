@@ -13,6 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, copy) NSString *message;
 
+- (instancetype)initWith:(NSString *)text;
+
 - (void)fromZIMMessage:(ZIMTextMessage *)message;
 
 - (ZIMTextMessage *)toZIMTextMessageModel;

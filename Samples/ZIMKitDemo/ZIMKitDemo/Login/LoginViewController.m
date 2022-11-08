@@ -15,15 +15,15 @@
 
 @interface LoginViewController ()<UITextFieldDelegate>
 
-@property (nonatomic, strong) UIImageView *topBgView;       //顶部背景view
-@property (nonatomic, strong) UILabel *topWelcomL;          //顶部提示语
+@property (nonatomic, strong) UIImageView *topBgView;       //Top background view
+@property (nonatomic, strong) UILabel *topWelcomL;          //Top prompt
 
-@property (nonatomic, strong) UIView *btBgview;             //底部背景view
-@property (nonatomic, strong) UILabel *btTipL;              //手机号码登录
-@property (nonatomic, strong) UITextField *btPhoneField;    //手机号输入框
-@property (nonatomic, strong) UILabel *phoneTipL;           //手机号码输入错误提示
-@property (nonatomic, strong) UILabel *btUserNameLabel;     //用户名
-@property (nonatomic, strong) UIButton *btLoginBtn;         //登录按钮
+@property (nonatomic, strong) UIView *btBgview;             //Bottom background view
+@property (nonatomic, strong) UILabel *btTipL;              //Mobile number login
+@property (nonatomic, strong) UITextField *btPhoneField;    //Mobile number input box
+@property (nonatomic, strong) UILabel *phoneTipL;           //Mobile number input error promp
+@property (nonatomic, strong) UILabel *btUserNameLabel;     //username input
+@property (nonatomic, strong) UIButton *btLoginBtn;         //login button
 
 @end
 
@@ -133,18 +133,17 @@
 }
 
 - (void)loginAction {
-    
-    //隐藏键盘
     [self.btPhoneField resignFirstResponder];
+    self.btLoginBtn.enabled = NO;
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.35 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //IM登录
-        [self loginIM:self.btPhoneField.text userName:[HelpCenter getUserNameWith:self.btPhoneField.text]];
+        //IM login
+        [self connectUser:self.btPhoneField.text userName:[HelpCenter getUserNameWith:self.btPhoneField.text]];
     });
 }
 
-#pragma mark 登录IM
-- (void)loginIM:(NSString *)userId userName:(NSString *)userName {
+#pragma mark
+- (void)connectUser:(NSString *)userId userName:(NSString *)userName {
     
     NSString *avatarUrl = [HelpCenter getUserAvatar:userId];
     
@@ -157,14 +156,15 @@
     
     [self.view makeToastActivity:CSToastPositionCenter];
     [[ZIMKitManager shared] connectUser:userinfo callback:^(ZIMError * _Nonnull errorInfo) {
-        [self.view hideToastActivity];
+        [weakSelf.view hideToastActivity];
+        weakSelf.btLoginBtn.enabled = YES;
         if (errorInfo.code == 6000104) {
             [weakSelf resetLayout];
-            [self.view makeToast:KitDemoLocalizedString(@"demo_user_login_tip1", LocalizedDemoKey, nil)];
+            [weakSelf.view makeToast:KitDemoLocalizedString(@"demo_user_login_tip1", LocalizedDemoKey, nil)];
         } else if (errorInfo.code) {
             weakSelf.phoneTipL.hidden = NO;
             [weakSelf resetLayout];
-            [self.view makeToast:errorInfo.message];
+            [weakSelf.view makeToast:errorInfo.message];
         } else {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"loginSuccess" object:nil];
             weakSelf.btUserNameLabel.text = KitDemoLocalizedString(@"demo_user_name", LocalizedDemoKey, nil);
@@ -243,7 +243,7 @@
         UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapBottom)];
         [_btBgview addGestureRecognizer:tap];
             
-        // 左上和右上为圆角
+        // Top left and top right corner
         UIBezierPath *cornerRadiusPath = [UIBezierPath bezierPathWithRoundedRect:_btBgview.bounds byRoundingCorners:UIRectCornerTopRight | UIRectCornerTopLeft cornerRadii:CGSizeMake(24, 24)];
         CAShapeLayer *cornerRadiusLayer = [ [CAShapeLayer alloc ]  init];
         cornerRadiusLayer.frame = _btBgview.bounds;

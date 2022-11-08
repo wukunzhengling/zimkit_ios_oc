@@ -20,14 +20,13 @@
 #import "NSBundle+ZIMKitUtil.h"
 #import "NSObject+ZIMKitUtil.h"
 #import "ZIMKitUserInfo.h"
+#import "ZIMKitGroupInfo.h"
 
 #import "ZIMKitRouter.h"
 #import "ZIMKitBaseModule.h"
 #import "ZIMKitLocalAPNS.h"
 
-#import "ZIMKitCreateChatController.h"
 #import "ZIMKitGroupDetailController.h"
-#import "ZIMKitAlertView.h"
 #import "ZIMKitMessagesListVC.h"
 
 #define weakify(obj) autoreleasepool{} __weak typeof(obj) obj##Weak = obj;
@@ -170,9 +169,6 @@ static NSString *const PARAM_GROUP_GROUPID      = @"groupID";
 static NSString * const router_chatListUrl = @"ZIMKit://ZIMKitMessages/ZIMKitMessageListVC";
 
 static NSString * const router_groupDetailUrl = @"ZIMKit://ZIMKitGroup/ZIMKitGroupDetailController";
-
-static NSString * const router_CreateChatUrl = @"ZIMKit://ZIMKitGroup/ZIMKitCreateChatController";
-
 
 #define ZIMKit_Image_Path [NSHomeDirectory() stringByAppendingString:@"/Documents/ZIMKitSDK/image/"]
 #define ZIMKit_Voice_Path [NSHomeDirectory() stringByAppendingString:@"/Documents/ZIMKitSDK/voice/"]

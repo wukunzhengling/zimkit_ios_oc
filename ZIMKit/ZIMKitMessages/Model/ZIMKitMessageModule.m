@@ -22,6 +22,7 @@
         NSInteger conversationType = [param[@"conversationType"] integerValue];
         NSString *conversationName = param[@"conversationName"];
         ZIMKitMessagesListVC *chatVc = [[ZIMKitMessagesListVC alloc] initWithConversationID:conversationID conversationType:conversationType conversationName:conversationName];
+
         [self jumpTovc:type nav:nav fromeV:fromVC toVC:chatVc];
     }];
 }

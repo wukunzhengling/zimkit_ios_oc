@@ -12,8 +12,7 @@
 - (void)fromZIMGroupFullInfo:(ZIMGroupFullInfo*)info {
     self.groupID = info.baseInfo.groupID;
     self.groupName = info.baseInfo.groupName;
-    self.groupNotice = info.groupNotice;
-    self.groupAttribution = info.groupAttributes;
+    self.groupAvatarUrl = info.baseInfo.groupAvatarUrl;
 }
 
 @end
